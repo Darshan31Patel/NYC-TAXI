@@ -43,8 +43,6 @@ def main():
                      output_path= output_path)
     
     
-    
-    
 if __name__ == "__main__":
     # call the main function
     main()
