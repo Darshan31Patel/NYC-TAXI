@@ -37,3 +37,16 @@ stages:
       - .\data\processed\transformations\test.csv
     outs:
       - .\data\processed\build-features
+
+  data_preprocessing:
+    cmd: python .\src\features\data_preprocessing.py train.csv val.csv test.csv
+    deps:
+      - .\src\features\data_preprocessing.py
+      - .\data\processed\build-features\train.csv
+      - .\data\processed\build-features\val.csv
+      - .\data\processed\build-features\test.csv
+    params:
+      - data_preprocessing.percentiles
+    outs:
+      - .\data\processed\final
+      - .\models\transformers

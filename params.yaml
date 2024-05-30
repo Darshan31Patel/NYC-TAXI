@@ -2,3 +2,7 @@ make_dataset:
   test_size: 0.1
   random_state: 30
 
+data_preprocessing:
+  percentiles:
+    - 0.002
+    - 0.998
