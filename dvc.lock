@@ -42,3 +42,52 @@ stages:
   modify_features:
     cmd: python .\src\features\modify_features.py data\interim\train.csv data\interim\val.csv
       data\raw\extracted\test.csv
+    deps:
+    - path: .\data\interim\train.csv
+      hash: md5
+      md5: 9282cea0cb6ddf4bdcca66b54678d900
+      size: 177304798
+    - path: .\data\interim\val.csv
+      hash: md5
+      md5: a41f9bd08b4d05d4701038b4a609104f
+      size: 19700006
+    - path: .\data\raw\extracted\test.csv
+      hash: md5
+      md5: 0686e4fc98617485dba9fdbabbf1c48d
+      size: 70794289
+    - path: .\src\features\modify_features.py
+      hash: md5
+      md5: 44eee346686863c5002fb28f60a284f1
+      size: 6522
+    outs:
+    - path: .\data\processed\transformations
+      hash: md5
+      md5: 3933e3f795356d9f77d2809ef79ee0e7.dir
+      size: 222978241
+      nfiles: 3
+  build_features:
+    cmd: python .\src\features\build_features.py data/processed/transformations/train.csv
+      data/processed/transformations/val.csv data/processed/transformations/test.csv
+    deps:
+    - path: .\data\processed\transformations\test.csv
+      hash: md5
+      md5: d6701de3cd9d62b57fc9d5c593347fd1
+      size: 60659121
+    - path: .\data\processed\transformations\train.csv
+      hash: md5
+      md5: 810f88a9945f48c3719baedc64b88586
+      size: 146204054
+    - path: .\data\processed\transformations\val.csv
+      hash: md5
+      md5: c76b8310b0db7277598014a4be529e5a
+      size: 16115066
+    - path: .\src\features\build_features.py
+      hash: md5
+      md5: 39993018b5e10b6541ffc7258ade44b6
+      size: 1656
+    outs:
+    - path: .\data\processed\build-features
+      hash: md5
+      md5: 438b40c3376df79048d05cecb3da4599.dir
+      size: 346156103
+      nfiles: 3
