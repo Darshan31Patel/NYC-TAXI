@@ -39,3 +39,6 @@ stages:
       md5: 5441a97a8e44bdeb11d92d9f11b71186.dir
       size: 197004804
       nfiles: 2
+  modify_features:
+    cmd: python .\src\features\modify_features.py data\interim\train.csv data\interim\val.csv
+      data\raw\extracted\test.csv

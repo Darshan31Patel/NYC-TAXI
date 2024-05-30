@@ -13,4 +13,6 @@ scikit-learn
 uvicorn
 fastapi
 joblib
+seaborn
+matplotlib
 -e .
