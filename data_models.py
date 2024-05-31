@@ -13,6 +13,3 @@ class PredictionDataset(BaseModel):
     pickup_month: int
     pickup_day: int
     is_weekend: int
-    haversine_distance: float
-    euclidean_distance: float
-    manhattan_distance: float

@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from pathlib import Path
 from sklearn.pipeline import Pipeline
 from data_models import PredictionDataset
+from src.features.distances import haversine_distance,manhattan_distance,euclidean_distance
 
 app = FastAPI()
 
@@ -29,6 +30,15 @@ def home():
 
 @app.post('/predictions')
 def predictions(test_data:PredictionDataset):
+    lat1 = test_data.pickup_latitude
+    lon1 = test_data.pickup_longitude
+    lat2 = test_data.dropoff_latitude
+    lon2 = test_data.dropoff_longitude
+
+    distance_manhattan = manhattan_distance(lat1,lon1,lat2,lon2)
+    distance_haversine = haversine_distance(lat1,lon1,lat2,lon2)
+    distance_euclidean = euclidean_distance(lat1,lon1,lat2,lon2)
+
     X_test = pd.DataFrame(
         data = {
             'vendor_id':test_data.vendor_id,
@@ -42,9 +52,9 @@ def predictions(test_data:PredictionDataset):
             'pickup_month':test_data.pickup_month,
             'pickup_day':test_data.pickup_day,
             'is_weekend':test_data.is_weekend,
-            'haversine_distance':test_data.haversine_distance,
-            'euclidean_distance':test_data.euclidean_distance,
-            'manhattan_distance':test_data.manhattan_distance
+            'haversine_distance':distance_haversine,
+            'euclidean_distance':distance_euclidean,
+            'manhattan_distance':distance_manhattan
          }, index=[0]
     )
 
@@ -56,3 +66,4 @@ def predictions(test_data:PredictionDataset):
 
 if __name__=="__main__":
     uvicorn.run(app="app:app",port=8000)
+
