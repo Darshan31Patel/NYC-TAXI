@@ -15,4 +15,5 @@ fastapi
 joblib
 seaborn
 matplotlib
+mlflow
 -e .

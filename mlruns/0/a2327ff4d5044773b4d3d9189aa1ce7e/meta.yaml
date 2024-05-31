@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Learning/NYC-TAXI/mlruns/0/a2327ff4d5044773b4d3d9189aa1ce7e/artifacts
+end_time: 1717148626721
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a2327ff4d5044773b4d3d9189aa1ce7e
+run_name: resilient-loon-649
+run_uuid: a2327ff4d5044773b4d3d9189aa1ce7e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717148617918
+status: 3
+tags: []
+user_id: Darshan
