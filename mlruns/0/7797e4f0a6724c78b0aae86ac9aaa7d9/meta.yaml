@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Learning/NYC-TAXI/mlruns/0/7797e4f0a6724c78b0aae86ac9aaa7d9/artifacts
+end_time: 1717149394864
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7797e4f0a6724c78b0aae86ac9aaa7d9
+run_name: handsome-stag-443
+run_uuid: 7797e4f0a6724c78b0aae86ac9aaa7d9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717149381716
+status: 3
+tags: []
+user_id: Darshan

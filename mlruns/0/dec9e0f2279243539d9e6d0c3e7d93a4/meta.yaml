@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Learning/NYC-TAXI/mlruns/0/dec9e0f2279243539d9e6d0c3e7d93a4/artifacts
+end_time: 1717149403623
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dec9e0f2279243539d9e6d0c3e7d93a4
+run_name: beautiful-turtle-376
+run_uuid: dec9e0f2279243539d9e6d0c3e7d93a4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717149395802
+status: 3
+tags: []
+user_id: Darshan
