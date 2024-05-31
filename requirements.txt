@@ -16,4 +16,5 @@ joblib
 seaborn
 matplotlib
 mlflow
+dagshub
 -e .
