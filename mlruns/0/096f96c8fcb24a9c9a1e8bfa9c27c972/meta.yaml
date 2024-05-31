@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Learning/NYC-TAXI/mlruns/0/096f96c8fcb24a9c9a1e8bfa9c27c972/artifacts
+end_time: 1717150167535
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 096f96c8fcb24a9c9a1e8bfa9c27c972
+run_name: adorable-finch-938
+run_uuid: 096f96c8fcb24a9c9a1e8bfa9c27c972
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717150154039
+status: 3
+tags: []
+user_id: Darshan

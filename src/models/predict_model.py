@@ -67,19 +67,30 @@ def load_dataframe(path):
     df = pd.read_csv(path)
     return df
 
-def make_X_y(dataframe:pd.DataFrame, target_column:str):
+def make_X_y(dataframe: pd.DataFrame, target_column: str):
     df_copy = dataframe.copy()
     X = df_copy.drop(columns=target_column, axis=1)
     y = df_copy[target_column]
     return X, y
 
-def get_predictions(model, X:pd.DataFrame):
+def get_predictions(model, X: pd.DataFrame):
     y_pred = model.predict(X)
     return y_pred
 
 def calculate_r2_score(y_true, y_pred):
     score = r2_score(y_true=y_true, y_pred=y_pred)
     return score
+
+def log_mlflow(params, model, model_name, data_path=None, score=None):
+    with mlflow.start_run():
+        if params:
+            mlflow.log_params(params)
+        if data_path:
+            mlflow.log_param("data_path", str(data_path))
+        if score is not None:
+            mlflow.log_metric("r2_score", score)
+        if model:
+            mlflow.sklearn.log_model(model, model_name)
 
 def main():
     current_path = Path(__file__)
@@ -97,17 +108,14 @@ def main():
 
         print(f"\nThe score for dataset {sys.argv[ind]} is {score}")
 
-        # Start MLflow run
-        with mlflow.start_run():
-            # Log parameters
-            mlflow.log_param("data_path", data_path)
-            mlflow.log_param("model_path", model_path)
-
-            # Log metrics
-            mlflow.log_metric("r2_score", score)
-
-            # Log model
-            mlflow.sklearn.log_model(model, "model")
+        # Use the MLflow logging function
+        log_mlflow(
+            params=None, 
+            model=model, 
+            model_name="model", 
+            data_path=data_path, 
+            score=score
+        )
 
 if __name__ == "__main__":
     main()
