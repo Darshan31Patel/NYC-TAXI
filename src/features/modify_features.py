@@ -121,7 +121,7 @@ def read_data(data_path):
     return df
 
 def save_data(dataframe:pd.DataFrame,save_path:Path):
-    dataframe.to_csv(save_path)
+    dataframe.to_csv(save_path,index=False)
 
 
 def main(data_path,filename):
