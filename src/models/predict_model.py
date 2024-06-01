@@ -7,7 +7,8 @@ import mlflow
 import mlflow.sklearn   
 
 TARGET = 'trip_duration'
-MODEL_NAME = 'rf.joblib'
+# MODEL_NAME = 'rf.joblib'
+MODEL_NAME = 'lgbm.joblib'
 
 def load_dataframe(path):
     df = pd.read_csv(path)

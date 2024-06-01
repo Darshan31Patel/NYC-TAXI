@@ -135,19 +135,21 @@ stages:
       size: 229654853
     - path: .\src\models\train_model.py
       hash: md5
-      md5: 19f896c34992f88fec52aafec24612dc
-      size: 1384
+      md5: b385ea227ddac6bba8273ea57ebc1d6b
+      size: 1961
     params:
       params.yaml:
-        train_model.random_forest_regressor.max_depth: 6
-        train_model.random_forest_regressor.n_estimators: 20
-        train_model.random_forest_regressor.n_jobs: -1
-        train_model.random_forest_regressor.verbose: 2
+        train_model.lightgbm_regressor.boosting_type: gbdt
+        train_model.lightgbm_regressor.learning_rate: 0.25
+        train_model.lightgbm_regressor.max_depth: 25
+        train_model.lightgbm_regressor.min_data_in_leaf: 100
+        train_model.lightgbm_regressor.n_estimators: 1500
+        train_model.lightgbm_regressor.num_leaves: 200
     outs:
     - path: .\models\models
       hash: md5
-      md5: 8d881a71d1bf2c2f29d7770f67c3b0b6.dir
-      size: 191009
+      md5: 22585d341a8b47da96aea6ae95bda41b.dir
+      size: 27552695
       nfiles: 1
   predict_model:
     cmd: python .\src\models\predict_model.py train.csv val.csv
@@ -158,10 +160,10 @@ stages:
       size: 25520387
     - path: .\models\models
       hash: md5
-      md5: 8d881a71d1bf2c2f29d7770f67c3b0b6.dir
-      size: 191009
+      md5: 22585d341a8b47da96aea6ae95bda41b.dir
+      size: 27552695
       nfiles: 1
     - path: .\src\models\predict_model.py
       hash: md5
-      md5: bd2705c2d79068c9f499b32370f558f1
-      size: 1604
+      md5: a3e2eb22ac259596f3c9b262dccd2a46
+      size: 1634

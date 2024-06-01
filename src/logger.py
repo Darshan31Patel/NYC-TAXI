@@ -24,7 +24,7 @@ def create_log_path(module_name: str) -> str:
     module_log_path = log_dir_path / module_name
     module_log_path.mkdir(exist_ok=True,parents=True)
     # convert the date to str
-    current_date_str = current_date.strftime("%d-%m-%Y")  # ! error at this point if not fixed
+    current_date_str = current_date.strftime("%d-%m-%Y") 
     # create log files based on current date
     log_file_name = module_log_path / (current_date_str + '.log')
     return log_file_name

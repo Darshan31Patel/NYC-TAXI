@@ -57,10 +57,16 @@ stages:
       - .\src\models\train_model.py
       - .\data\processed\final\train.csv
     params:
-      - train_model.random_forest_regressor.n_estimators
-      - train_model.random_forest_regressor.n_jobs
-      - train_model.random_forest_regressor.max_depth
-      - train_model.random_forest_regressor.verbose
+      # - train_model.random_forest_regressor.n_estimators
+      # - train_model.random_forest_regressor.n_jobs
+      # - train_model.random_forest_regressor.max_depth
+      # - train_model.random_forest_regressor.verbose
+      - train_model.lightgbm_regressor.boosting_type
+      - train_model.lightgbm_regressor.num_leaves
+      - train_model.lightgbm_regressor.learning_rate
+      - train_model.lightgbm_regressor.n_estimators
+      - train_model.lightgbm_regressor.max_depth
+      - train_model.lightgbm_regressor.min_data_in_leaf
     outs:
       - .\models\models
 
